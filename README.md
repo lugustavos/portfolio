@@ -1,7 +1,18 @@
 # Portfólio — Luís Gustavo
 
-Portfólio pessoal em React + Vite + Tailwind CSS, com foco em apresentar os projetos
-desenvolvidos ao longo da graduação.
+Portfólio pessoal desenvolvido em **React + Vite + Tailwind CSS**, reunindo os
+projetos feitos ao longo da graduação em Desenvolvimento de Software
+Multiplataforma (DSM).
+
+🔗 **Ao vivo:** https://portfolio-tau-nine-zvpd1nb7em.vercel.app
+
+## Tecnologias
+
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion (animações)
+- Deploy na Vercel
 
 ## Rodando localmente
 
@@ -10,7 +21,7 @@ npm install
 npm run dev
 ```
 
-Abre em `http://localhost:5173`.
+O site abre em `http://localhost:5173`.
 
 ## Build de produção
 
@@ -19,35 +30,31 @@ npm run build      # gera /dist
 npm run preview    # serve o build localmente
 ```
 
-## Como personalizar
-
-Todo o conteúdo editável fica em `src/data/`:
-
-| Arquivo | O que contém |
-| --- | --- |
-| `src/data/profile.ts` | Nome, título, bio, localização, formação, links (e-mail, GitHub, LinkedIn, currículo) e a lista de skills. |
-| `src/data/projects.ts` | Um objeto por projeto/semestre: título, descrição, destaques, stack, papel e links. |
-
-Campos marcados com `⚠️ TODO` no código precisam da sua informação real.
-
-### Foto e currículo
-
-- Coloque sua foto em `public/perfil.jpg` e aponte `profile.photo` para `/perfil.jpg`.
-- Coloque o currículo em `public/curriculo.pdf` e aponte `profile.links.resume` para `/curriculo.pdf`.
-
-## Deploy
-
-O projeto já vem com `vercel.json`. Basta importar o repositório na Vercel — o framework
-Vite é detectado automaticamente (`npm run build` → saída `dist`).
-
 ## Estrutura
 
 ```
 src/
-  data/           # conteúdo editável (perfil + projetos)
-  components/      # seções da página
-    ui/Reveal.tsx  # wrapper de animação on-scroll
+  data/
+    profile.ts       # dados pessoais, formação, links e skills
+    projects.ts      # um objeto por projeto (título, descrição, stack, links)
+  components/         # seções da página (Hero, Projects, Timeline, About…)
+    ui/Reveal.tsx     # wrapper de animação on-scroll
   App.tsx
   main.tsx
-  index.css        # tema (cores, fontes) via Tailwind
+  index.css           # tema (cores e fontes) via Tailwind
+public/
+  perfil.jpg          # foto usada na seção "Sobre"
 ```
+
+Todo o conteúdo do site fica em `src/data/` — editar esses dois arquivos é
+suficiente para atualizar textos, projetos e links.
+
+## Projetos apresentados
+
+| Semestre | Projeto | Descrição |
+| --- | --- | --- |
+| 1º | MindRest | Plataforma web sobre gestão de ansiedade |
+| 2º | 2Buku.com | Marketplace de troca de livros usados |
+| 3º | Center Pet — Web | Plataforma de adoção responsável de animais |
+| 4º | Swaply | Plataforma full stack de troca de livros |
+| 5º | Center Pet — Mobile | App de adoção em React Native |
