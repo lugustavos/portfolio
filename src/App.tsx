@@ -1,7 +1,12 @@
+import { Navbar } from './components/Navbar'
+
 export default function App() {
   return (
-    <main>
-      <h1>Portfólio</h1>
-    </main>
+    <>
+      <Navbar />
+      <main className="container-content py-10">
+        <p>em construção</p>
+      </main>
+    </>
   )
 }
