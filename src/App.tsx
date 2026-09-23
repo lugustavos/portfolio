@@ -1,12 +1,15 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
+import Home from './pages/Home'
 
 export default function App() {
   return (
     <>
       <Navbar />
-      <main className="container-content py-10">
-        <p>em construção</p>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </>
   )
 }
