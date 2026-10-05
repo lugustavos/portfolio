@@ -124,6 +124,61 @@ export const projects: Project[] = [
     myTech: ['Node.js', 'Express', 'Handlebars', 'MySQL', 'Nodemailer', 'Bootstrap', 'JavaScript', 'Git e GitHub'],
     accent: '#fef3c7',
   },
+  {
+    slug: 'center-pet-web',
+    semester: 3,
+    semesterLabel: '3º Semestre',
+    period: '2025/1',
+    title: 'Center Pet (Web)',
+    tagline: 'Plataforma de adoção responsável de animais',
+    type: 'Full Stack',
+    team: 'Projeto em equipe (6 integrantes)',
+    description: [
+      'O Center Pet conecta ONGs de proteção animal a pessoas que querem adotar. As ONGs cadastram e gerenciam os animais; os adotantes exploram o catálogo, conhecem cada pet e acompanham o processo de adoção.',
+      'O projeto é dividido em uma aplicação web (React) e uma API própria (Node.js com MongoDB), desenvolvidas por toda a equipe.',
+    ],
+    features: [
+      'Catálogo de pets com filtros e página de detalhes de cada animal',
+      'Perfis de ONGs e de adotantes, com áreas e dashboards próprios',
+      'Cadastro e edição de pets pela ONG',
+      'Fluxo de adoção com formulário de "adotante seguro" e acompanhamento do andamento',
+      'Notificações por e-mail durante a adoção',
+      'Acessibilidade: ajuste de fonte, filtros para daltonismo e tema claro/escuro',
+    ],
+    stack: [
+      'React',
+      'Vite',
+      'React Router',
+      'Tailwind CSS',
+      'Material UI',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'JWT',
+      'Nodemailer',
+    ],
+    links: [
+      { label: 'Código da aplicação web', href: 'https://github.com/Center-Pet/center-pet-web', kind: 'code' },
+      { label: 'Código da API', href: 'https://github.com/Center-Pet/center-pet-api', kind: 'code' },
+    ],
+    screenshots: [
+      { src: '/projects/center-pet-web/01-home.png', caption: 'Página inicial' },
+      { src: '/projects/center-pet-web/02-catalogo.png', caption: 'Catálogo de pets' },
+      { src: '/projects/center-pet-web/03-pet.png', caption: 'Página de detalhes de um pet' },
+      { src: '/projects/center-pet-web/04-login.png', caption: 'Tela de login' },
+      { src: '/projects/center-pet-web/05-cadastro-ong.png', caption: 'Cadastro de organização (ONG)' },
+    ],
+    screenshotsNote:
+      'Capturas da aplicação em execução, consumindo a API publicada. Telas autenticadas (dashboard, adoção) não aparecem para não expor dados de usuários reais.',
+    participation: [
+      'No front-end, desenvolvi a página inicial e a página inicial da ONG.',
+      'Implementei as validações de CPF, CNPJ e CEP nos formulários de cadastro.',
+      'Atualizei a tela de login e criei o acompanhamento do andamento da adoção.',
+      'Na API, criei as rotas de login e logout e o envio de e-mails da adoção com Nodemailer.',
+    ],
+    myTech: ['React', 'JavaScript', 'Node.js', 'Express', 'MongoDB', 'Nodemailer', 'Git e GitHub'],
+    accent: '#fce7f3',
+  },
 ]
 
 export const getProject = (slug?: string) => projects.find((p) => p.slug === slug)
