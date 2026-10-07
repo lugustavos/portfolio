@@ -220,12 +220,16 @@ export const projects: Project[] = [
       { label: 'Site publicado', href: 'https://swaply-web.vercel.app/', kind: 'site' },
     ],
     screenshots: [
-      { src: '/projects/swaply/01-catalogo.png', caption: 'Catálogo de cursos (página inicial)' },
-      { src: '/projects/swaply/02-login.png', caption: 'Tela de login' },
-      { src: '/projects/swaply/03-cadastro.png', caption: 'Tela de cadastro' },
+      { src: '/projects/swaply/01-catalogo.png', caption: 'Catálogo de cursos' },
+      { src: '/projects/swaply/02-detalhe-curso.png', caption: 'Detalhes de um curso: instrutor e conteúdo' },
+      { src: '/projects/swaply/03-perfil.png', caption: 'Perfil do usuário, créditos e meus cursos' },
+      { src: '/projects/swaply/04-novo-curso.png', caption: 'Criação de um novo curso' },
+      { src: '/projects/swaply/05-agenda.png', caption: 'Agenda de aulas' },
+      { src: '/projects/swaply/06-login.png', caption: 'Tela de login' },
+      { src: '/projects/swaply/07-cadastro.png', caption: 'Tela de cadastro' },
     ],
     screenshotsNote:
-      'Capturas do site publicado. A API do projeto fica em hospedagem gratuita e estava indisponível no momento da captura, por isso a lista de cursos aparece vazia.',
+      'Capturas do projeto rodando localmente (front-end e API), com um banco de dados de teste populado pelo script de seed do próprio repositório. Os usuários, cursos e as fotos de capa são dados de exemplo.',
     participation: [
       'Atuei como desenvolvedor full stack, em equipe, com foco nas ferramentas de login e de autenticação de usuários.',
       'Trabalhei no front-end da aplicação, desenvolvido em React.',
