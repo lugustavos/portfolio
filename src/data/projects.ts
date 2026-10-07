@@ -19,6 +19,8 @@ export type Project = {
   links: ProjectLink[]
   /** Screenshots do projeto em funcionamento (iv) */
   screenshots: Screenshot[]
+  /** Observação exibida sob o título das screenshots (ex.: como foram capturadas) */
+  screenshotsNote?: string
   /** O que eu fiz no projeto (v) */
   participation: string[]
   /** Tecnologias que eu utilizei (v) */
@@ -148,7 +150,15 @@ export const projects: Project[] = [
       { label: 'Código — aplicação web', href: 'https://github.com/Center-Pet/center-pet-web', kind: 'code' },
       { label: 'Código — API', href: 'https://github.com/Center-Pet/center-pet-api', kind: 'code' },
     ],
-    screenshots: [],
+    screenshots: [
+      { src: '/projects/center-pet-web/01-home.png', caption: 'Página inicial' },
+      { src: '/projects/center-pet-web/02-catalogo.png', caption: 'Catálogo de pets' },
+      { src: '/projects/center-pet-web/03-pet.png', caption: 'Página de detalhes de um pet' },
+      { src: '/projects/center-pet-web/04-login.png', caption: 'Tela de login' },
+      { src: '/projects/center-pet-web/05-cadastro-ong.png', caption: 'Cadastro de organização (ONG)' },
+    ],
+    screenshotsNote:
+      'Capturas da aplicação em execução, consumindo a API publicada. Telas autenticadas (dashboard, adoção) não aparecem para não expor dados de usuários reais.',
     participation: [
       'No front-end, desenvolvi a página inicial e a página inicial da ONG.',
       'Implementei as validações de CPF, CNPJ e CEP nos formulários de cadastro.',
@@ -215,7 +225,14 @@ export const projects: Project[] = [
     ],
     stack: ['React Native', 'Expo', 'React Navigation', 'NativeWind', 'AsyncStorage', 'API REST'],
     links: [{ label: 'Código no GitHub', href: 'https://github.com/Center-Pet/center-pet-mobile', kind: 'code' }],
-    screenshots: [],
+    screenshots: [
+      { src: '/projects/center-pet-mobile/01-home.png', caption: 'Início' },
+      { src: '/projects/center-pet-mobile/02-catalogo.png', caption: 'Catálogo de pets' },
+      { src: '/projects/center-pet-mobile/03-pet.png', caption: 'Detalhes do pet' },
+      { src: '/projects/center-pet-mobile/04-login.png', caption: 'Login' },
+    ],
+    screenshotsNote:
+      'Capturas do aplicativo em execução via Expo Web, em tela de celular (390×844), consumindo a API publicada.',
     participation: [
       'Integrei a equipe que migrou o Center Pet para o aplicativo mobile.',
     ],

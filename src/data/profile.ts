@@ -89,7 +89,7 @@ export const extensionCourses: ExtensionCourse[] = [
   {
     name: 'Fundamentos de RF e Wi-Fi',
     institution: 'NIC.br',
-    place: 'Online',
+    place: 'Presencial',
     period: 'fev/2026',
   },
   {
@@ -135,24 +135,28 @@ export const certifications: Certification[] = [
     name: 'Google Cloud Computing Foundations',
     issuer: 'Google Cloud Skills Boost',
     date: 'mai/2026',
+    image: '/certs/gcp.png',
   },
   {
     code: 'NSE 3',
     name: 'Fortinet Certified Associate — FortiGate 7.6 Operator',
     issuer: 'Fortinet',
     date: 'abr/2026',
+    image: '/certs/nse3.png',
   },
   {
     code: 'UWS',
     name: 'UniFi Wireless Specialist',
     issuer: 'Ubiquiti',
     date: 'fev/2026',
+    image: '/certs/uws.png',
   },
   {
     code: 'AZ-104',
     name: 'Azure Administrator Associate',
     issuer: 'Microsoft',
     date: 'em andamento',
+    image: '/certs/az-104.png',
     inProgress: true,
   },
 ]

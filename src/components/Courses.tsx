@@ -6,13 +6,13 @@ import { SectionHeading } from './ui/SectionHeading'
 function CertBadge({ cert }: { cert: Certification }) {
   return (
     <div className={`card flex h-full flex-col items-center p-5 text-center ${cert.inProgress ? 'border-dashed' : ''}`}>
-      <div className="flex h-28 w-28 items-center justify-center">
+      <div className="flex h-32 w-32 items-center justify-center">
         {cert.image ? (
           <img
             src={cert.image}
             alt={`Selo ${cert.issuer} ${cert.code}`}
             loading="lazy"
-            className="h-full w-full object-contain"
+            className={`h-full w-full object-contain ${cert.inProgress ? 'opacity-50 grayscale' : ''}`}
           />
         ) : (
           <div className="flex h-24 w-24 flex-col items-center justify-center rounded-2xl border border-accent/40 bg-gradient-to-br from-accent/20 to-accent2/10">

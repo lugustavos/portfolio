@@ -103,6 +103,9 @@ export default function ProjectPage() {
         {/* iv) Screenshots */}
         <Reveal className="mt-14">
           <Heading n="03">Screenshots</Heading>
+          {project.screenshotsNote && (
+            <p className="mt-3 max-w-3xl text-sm text-muted">{project.screenshotsNote}</p>
+          )}
           {project.screenshots.length > 0 ? (
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               {project.screenshots.map((s, idx) => (
