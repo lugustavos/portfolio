@@ -105,7 +105,16 @@ export const projects: Project[] = [
       'API do IBGE',
     ],
     links: [{ label: 'Código no GitHub', href: 'https://github.com/Celegattodev/2Buku.com', kind: 'code' }],
-    screenshots: [],
+    screenshots: [
+      { src: '/projects/2buku/01-home.png', caption: 'Página inicial e login' },
+      { src: '/projects/2buku/06-cadastro.png', caption: 'Cadastro de usuário' },
+      { src: '/projects/2buku/02-catalogo.png', caption: 'Catálogo — livros mais populares' },
+      { src: '/projects/2buku/03-perfil.png', caption: 'Perfil do usuário e "Meus livros"' },
+      { src: '/projects/2buku/05-detalhes-do-livro.png', caption: 'Detalhes de um livro' },
+      { src: '/projects/2buku/04-favoritos.png', caption: 'Livros favoritos' },
+    ],
+    screenshotsNote:
+      'Capturas do projeto rodando localmente, com um banco de dados de teste e um usuário fictício. As capas e descrições dos livros vieram de dados de exemplo (Open Library) no lugar da Google Books API, que estava com a cota diária esgotada no momento da captura.',
     participation: [
       'Implementei o cadastro, o login e o gerenciamento de usuários (atualização de dados e exclusão de conta).',
       'Desenvolvi o CRUD de livros: cadastro, edição, detalhes do livro e catálogo, com as views em Handlebars.',
