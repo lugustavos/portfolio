@@ -17,6 +17,8 @@ export type Project = {
   stack: string[]
   /** Links para o código e para o projeto publicado (iii) */
   links: ProjectLink[]
+  /** Aviso exibido junto aos links (ex.: quando o código não está publicado) */
+  codeNote?: string
   /** Screenshots do projeto em funcionamento (iv) */
   screenshots: Screenshot[]
   /** Observação exibida sob o título das screenshots (ex.: como foram capturadas) */
@@ -191,15 +193,17 @@ export const projects: Project[] = [
     ],
     stack: ['React', 'Vite', 'JavaScript', 'API REST', 'Vercel', 'Render'],
     links: [{ label: 'Site publicado', href: 'https://swaply-web.vercel.app/', kind: 'site' }],
+    codeNote: 'O repositório do código-fonte deste projeto não está disponível publicamente.',
     screenshots: [
       { src: '/projects/swaply/01-catalogo.png', caption: 'Catálogo de cursos (página inicial)' },
       { src: '/projects/swaply/02-login.png', caption: 'Tela de login' },
       { src: '/projects/swaply/03-cadastro.png', caption: 'Tela de cadastro' },
     ],
     participation: [
-      'Atuei como desenvolvedor full stack, em equipe, do front-end e da API.',
+      'Atuei como desenvolvedor full stack, em equipe, com foco nas ferramentas de login e de autenticação de usuários.',
+      'Trabalhei no front-end da aplicação, desenvolvido em React.',
     ],
-    myTech: ['React', 'JavaScript', 'API REST', 'Git e GitHub'],
+    myTech: ['React', 'JavaScript', 'API REST', 'Autenticação de usuários', 'Git e GitHub'],
     accent: '#34d399',
   },
   {
@@ -234,9 +238,11 @@ export const projects: Project[] = [
     screenshotsNote:
       'Capturas do aplicativo em execução via Expo Web, em tela de celular (390×844), consumindo a API publicada.',
     participation: [
-      'Integrei a equipe que migrou o Center Pet para o aplicativo mobile.',
+      'Integrei a equipe que migrou o Center Pet para o aplicativo mobile, atuando nas ferramentas de login e de autenticação.',
+      'Trabalhei no front-end do aplicativo, em React Native.',
+      'O código foi consolidado pela equipe em um único commit, por isso meu nome não aparece no histórico do repositório.',
     ],
-    myTech: ['React Native', 'Expo', 'JavaScript', 'Git e GitHub'],
+    myTech: ['React Native', 'Expo', 'JavaScript', 'Autenticação de usuários', 'Git e GitHub'],
     accent: '#ec4899',
   },
 ]

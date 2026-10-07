@@ -90,18 +90,21 @@ export const extensionCourses: ExtensionCourse[] = [
     name: 'Fundamentos de RF e Wi-Fi',
     institution: 'NIC.br',
     place: 'Presencial',
+    hours: 18,
     period: 'fev/2026',
   },
   {
     name: 'Junos IJOS e Intermediate Routing (JIR)',
     institution: 'Juniper Networks',
     place: 'Online',
+    hours: 32,
     period: 'nov/2025',
   },
   {
     name: 'Segurança da Informação e LGPD',
     institution: 'Fundação Bradesco',
     place: 'Online',
+    hours: 12,
     period: '2024',
   },
 ]

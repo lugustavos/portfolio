@@ -98,6 +98,7 @@ export default function ProjectPage() {
               </a>
             ))}
           </div>
+          {project.codeNote && <p className="mt-4 text-sm text-muted">{project.codeNote}</p>}
         </Reveal>
 
         {/* iv) Screenshots */}
