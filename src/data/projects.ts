@@ -190,7 +190,7 @@ export const projects: Project[] = [
     team: 'Projeto em equipe',
     description: [
       'O Swaply é uma plataforma em que as pessoas ensinam e aprendem umas com as outras. A ideia central é "ensinar é aprender duas vezes": cada hora de aula ministrada rende 1 crédito, que pode ser usado para fazer outros cursos.',
-      'Instrutores criam cursos e abrem horários na agenda; estudantes se matriculam em um curso completo ou em aulas avulsas, agendam, assistem e avaliam. O front-end é uma aplicação React publicada na Vercel, que consome uma API REST própria.',
+      'Instrutores criam cursos e abrem horários na agenda; estudantes se matriculam em um curso completo ou em aulas avulsas, agendam, assistem e avaliam. O front-end é uma aplicação React publicada na Vercel e a API é própria, em Node.js com MongoDB, publicada no Render.',
     ],
     features: [
       'Catálogo de cursos com busca, destaques e os mais populares',
@@ -198,21 +198,40 @@ export const projects: Project[] = [
       'Matrícula em curso completo ou em aula avulsa, com sistema de créditos',
       'Agenda e calendário de aulas agendadas',
       'Favoritos, notificações, avaliações de cursos e da plataforma',
-      'Acessibilidade: VLibras e modos para daltonismo',
+      'Autenticação com JWT e aulas por videochamada (Jitsi) na API',
+      'Acessibilidade: VLibras, controle de fonte, tema e modos para daltonismo',
     ],
-    stack: ['React', 'Vite', 'JavaScript', 'API REST', 'Vercel', 'Render'],
-    links: [{ label: 'Site publicado', href: 'https://swaply-web.vercel.app/', kind: 'site' }],
-    codeNote: 'O repositório do código-fonte deste projeto não está disponível publicamente.',
+    stack: [
+      'React',
+      'Vite',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'JWT',
+      'Jitsi',
+      'Stripe',
+      'Cloudinary',
+      'Vercel',
+      'Render',
+    ],
+    links: [
+      { label: 'Código — aplicação web', href: 'https://github.com/Swaply-Conhecimento/swaply-web', kind: 'code' },
+      { label: 'Código — API', href: 'https://github.com/Swaply-Conhecimento/swaply-api', kind: 'code' },
+      { label: 'Site publicado', href: 'https://swaply-web.vercel.app/', kind: 'site' },
+    ],
     screenshots: [
       { src: '/projects/swaply/01-catalogo.png', caption: 'Catálogo de cursos (página inicial)' },
       { src: '/projects/swaply/02-login.png', caption: 'Tela de login' },
       { src: '/projects/swaply/03-cadastro.png', caption: 'Tela de cadastro' },
     ],
+    screenshotsNote:
+      'Capturas do site publicado. A API do projeto fica em hospedagem gratuita e estava indisponível no momento da captura, por isso a lista de cursos aparece vazia.',
     participation: [
       'Atuei como desenvolvedor full stack, em equipe, com foco nas ferramentas de login e de autenticação de usuários.',
       'Trabalhei no front-end da aplicação, desenvolvido em React.',
+      'Minhas contribuições foram incorporadas ao repositório pela equipe, por isso meu nome não aparece na lista de contribuidores.',
     ],
-    myTech: ['React', 'JavaScript', 'API REST', 'Autenticação de usuários', 'Git e GitHub'],
+    myTech: ['React', 'JavaScript', 'Node.js', 'API REST', 'Autenticação de usuários', 'Git e GitHub'],
     accent: '#34d399',
   },
   {
@@ -249,7 +268,7 @@ export const projects: Project[] = [
     participation: [
       'Integrei a equipe que migrou o Center Pet para o aplicativo mobile, atuando nas ferramentas de login e de autenticação.',
       'Trabalhei no front-end do aplicativo, em React Native.',
-      'O código foi consolidado pela equipe em um único commit, por isso meu nome não aparece no histórico do repositório.',
+      'Minhas contribuições foram incorporadas ao repositório pela equipe, por isso meu nome não aparece no histórico de commits.',
     ],
     myTech: ['React Native', 'Expo', 'JavaScript', 'Autenticação de usuários', 'Git e GitHub'],
     accent: '#ec4899',
