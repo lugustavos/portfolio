@@ -1,16 +1,28 @@
+export type ProjectLink = { label: string; href: string; kind: 'code' | 'site' }
+export type Screenshot = { src: string; caption: string }
+
 export type Project = {
   slug: string
   semester: number
   semesterLabel: string
+  period: string
   title: string
   tagline: string
-  description: string
-  highlights: string[]
-  stack: string[]
-  role: string
   type: 'Web' | 'Mobile' | 'Full Stack'
   team: string
-  links: { label: string; href: string }[]
+  /** Descrição do projeto (ii) */
+  description: string[]
+  features: string[]
+  /** Tecnologias do projeto como um todo (ii) */
+  stack: string[]
+  /** Links para o código e para o projeto publicado (iii) */
+  links: ProjectLink[]
+  /** Screenshots do projeto em funcionamento (iv) */
+  screenshots: Screenshot[]
+  /** O que eu fiz no projeto (v) */
+  participation: string[]
+  /** Tecnologias que eu utilizei (v) */
+  myTech: string[]
   accent: string
 }
 
@@ -19,114 +31,197 @@ export const projects: Project[] = [
     slug: 'mindrest',
     semester: 1,
     semesterLabel: '1º Semestre',
+    period: '2024/1',
     title: 'MindRest',
-    tagline: 'Plataforma web para gestão de ansiedade',
-    description:
-      'Primeiro projeto da graduação: um espaço digital acessível com estratégias práticas para o dia a dia de quem convive com ansiedade. O foco foi criar uma experiência acolhedora e simples, com conteúdo organizado e navegação leve.',
-    highlights: [
-      'Interface construída do zero com HTML, CSS e JavaScript puro',
-      'Conteúdo dividido em páginas temáticas de técnicas e exercícios',
-      'Design centrado no usuário, priorizando clareza e acessibilidade',
-      'Deploy contínuo na Vercel',
-    ],
-    stack: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
-    role: 'Desenvolvimento front-end, em equipe',
+    tagline: 'Plataforma web para ajudar no dia a dia com a ansiedade',
     type: 'Web',
-    team: 'Projeto em equipe',
-    links: [
-      { label: 'Repositório', href: 'https://github.com/lugustavos/MindRest' },
-      { label: 'Site ao vivo', href: 'https://mind-rest.vercel.app' },
+    team: 'Projeto em equipe (3 integrantes)',
+    description: [
+      'O MindRest é um refúgio online para quem convive com a ansiedade: reúne músicas relaxantes, exercícios de respiração guiada e conteúdo informativo em um só lugar, com uma interface calma e simples de usar.',
+      'Foi o primeiro projeto da graduação e o primeiro site completo que publicamos, com deploy contínuo na Vercel.',
     ],
+    features: [
+      'Página inicial com carrossel e apresentação da proposta da plataforma',
+      'Página de música com players de playlists voltadas ao alívio de ansiedade e estresse',
+      'Exercício de respiração guiada com contador interativo',
+      'Links para conteúdos e serviços de apoio (como o CVV)',
+      'Layout responsivo para celular e desktop',
+    ],
+    stack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'Vercel'],
+    links: [
+      { label: 'Código no GitHub', href: 'https://github.com/lugustavos/MindRest', kind: 'code' },
+      { label: 'Site publicado', href: 'https://mind-rest.vercel.app', kind: 'site' },
+    ],
+    screenshots: [
+      { src: '/projects/mindrest/01-home.png', caption: 'Página inicial' },
+      { src: '/projects/mindrest/03-musica.png', caption: 'Página de música' },
+      { src: '/projects/mindrest/02-respiracao.png', caption: 'Exercício de respiração' },
+      { src: '/projects/mindrest/04-home-mobile.png', caption: 'Versão responsiva (celular)' },
+    ],
+    participation: [
+      'Desenvolvi a página inicial e a seção "Sobre nós".',
+      'Construí a barra de navegação e a página de música.',
+      'Trabalhei na responsividade do site para telas menores.',
+      'Implementei o formulário e a troca de idioma da interface.',
+    ],
+    myTech: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'Git e GitHub'],
     accent: '#22d3ee',
   },
   {
     slug: '2buku',
     semester: 2,
     semesterLabel: '2º Semestre',
+    period: '2024/2',
     title: '2Buku.com',
-    tagline: 'Marketplace de troca de livros usados',
-    description:
-      'Plataforma que conecta leitores para troca de livros usados, incentivando a leitura, a sustentabilidade e a criação de comunidade. Os usuários navegam pelo catálogo, enviam propostas de troca e, ao aceite, recebem os contatos por e-mail para combinar a entrega.',
-    highlights: [
-      'Catálogo com busca integrada à Google Books API',
-      'Fluxo de propostas de troca com aceite/recusa pelo dono do livro',
-      'Notificações por e-mail via Nodemailer',
-      'Cadastro com preenchimento de localidade pela API do IBGE',
-      'Upload e armazenamento de imagens na Cloudinary',
-      'Arquitetura MVC com Node.js e banco MySQL',
-    ],
-    stack: ['Node.js', 'JavaScript', 'Bootstrap', 'MySQL', 'HTML5', 'CSS3', 'Google Books API', 'Nodemailer', 'Cloudinary'],
-    role: 'Desenvolvimento full stack, em equipe',
+    tagline: 'Plataforma de troca de livros usados entre leitores',
     type: 'Full Stack',
     team: 'Projeto em equipe',
-    links: [{ label: 'Repositório', href: 'https://github.com/Celegattodev/2Buku.com' }],
+    description: [
+      'O 2Buku conecta leitores que querem trocar livros usados, incentivando a leitura, a sustentabilidade e a criação de uma comunidade. Quem se interessa por um título envia uma proposta de troca ao dono do livro.',
+      'O dono recebe um e-mail, aceita ou recusa e, se houver acordo, os dois recebem os contatos para combinar a entrega por conta própria.',
+    ],
+    features: [
+      'Cadastro, login e perfil de usuário com sessão',
+      'Catálogo de livros com busca integrada à Google Books API',
+      'Propostas de troca com aceite e recusa pelo dono do livro',
+      'Notificações por e-mail com Nodemailer',
+      'Cadastro de localidade pela API do IBGE',
+      'Upload e armazenamento de imagens na Cloudinary',
+    ],
+    stack: [
+      'Node.js',
+      'Express',
+      'Handlebars',
+      'MySQL',
+      'Bootstrap',
+      'JavaScript',
+      'Google Books API',
+      'Nodemailer',
+      'Cloudinary',
+      'API do IBGE',
+    ],
+    links: [{ label: 'Código no GitHub', href: 'https://github.com/Celegattodev/2Buku.com', kind: 'code' }],
+    screenshots: [],
+    participation: [
+      'Implementei o cadastro, o login e o gerenciamento de usuários (atualização de dados e exclusão de conta).',
+      'Desenvolvi o CRUD de livros: cadastro, edição, detalhes do livro e catálogo, com as views em Handlebars.',
+      'Criei o sistema de notificações por e-mail com Nodemailer.',
+      'Participei da modelagem e criação do banco de dados MySQL e da integração do upload de imagens.',
+    ],
+    myTech: ['Node.js', 'Express', 'Handlebars', 'MySQL', 'Nodemailer', 'Bootstrap', 'JavaScript', 'Git e GitHub'],
     accent: '#f59e0b',
   },
   {
     slug: 'center-pet-web',
     semester: 3,
     semesterLabel: '3º Semestre',
+    period: '2025/1',
     title: 'Center Pet — Web',
     tagline: 'Plataforma de adoção responsável de animais',
-    description:
-      'Aplicação web que conecta ONGs de proteção animal a potenciais adotantes. Reúne o catálogo de pets disponíveis, perfis das ONGs, cadastro de animais e um processo de adoção guiado, com formulário de triagem para adoção responsável.',
-    highlights: [
-      'Catálogo de pets com filtros e página de detalhes por animal',
-      'Perfis de ONGs e de adotantes com áreas dedicadas',
-      'Cadastro e edição de pets pela ONG (dashboard próprio)',
-      'Fluxo de adoção com formulário de "adotante seguro"',
-      'Recursos de acessibilidade: controle de fonte, filtros para daltonismo e tema',
-      'SPA em React + Vite com autenticação e rotas protegidas',
+    type: 'Full Stack',
+    team: 'Projeto em equipe (6 integrantes)',
+    description: [
+      'O Center Pet conecta ONGs de proteção animal a pessoas que querem adotar. As ONGs cadastram e gerenciam os animais; os adotantes exploram o catálogo, conhecem cada pet e acompanham o processo de adoção.',
+      'O projeto é dividido em uma aplicação web (React) e uma API própria (Node.js com MongoDB), desenvolvidas por toda a equipe.',
     ],
-    stack: ['React', 'Vite', 'JavaScript', 'CSS3', 'API REST'],
-    role: 'Desenvolvimento front-end, em equipe',
-    type: 'Web',
-    team: 'Projeto em equipe (organização Center-Pet)',
-    links: [{ label: 'Repositório', href: 'https://github.com/Center-Pet/center-pet-web' }],
+    features: [
+      'Catálogo de pets com filtros e página de detalhes de cada animal',
+      'Perfis de ONGs e de adotantes, com áreas e dashboards próprios',
+      'Cadastro e edição de pets pela ONG',
+      'Fluxo de adoção com formulário de "adotante seguro" e acompanhamento do andamento',
+      'Notificações por e-mail durante a adoção',
+      'Acessibilidade: ajuste de fonte, filtros para daltonismo e tema claro/escuro',
+    ],
+    stack: [
+      'React',
+      'Vite',
+      'React Router',
+      'Tailwind CSS',
+      'Material UI',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'JWT',
+      'Nodemailer',
+    ],
+    links: [
+      { label: 'Código — aplicação web', href: 'https://github.com/Center-Pet/center-pet-web', kind: 'code' },
+      { label: 'Código — API', href: 'https://github.com/Center-Pet/center-pet-api', kind: 'code' },
+    ],
+    screenshots: [],
+    participation: [
+      'No front-end, desenvolvi a página inicial e a página inicial da ONG.',
+      'Implementei as validações de CPF, CNPJ e CEP nos formulários de cadastro.',
+      'Atualizei a tela de login e criei o acompanhamento do andamento da adoção.',
+      'Na API, criei as rotas de login e logout e o envio de e-mails da adoção com Nodemailer.',
+    ],
+    myTech: ['React', 'JavaScript', 'Node.js', 'Express', 'MongoDB', 'Nodemailer', 'Git e GitHub'],
     accent: '#7c5cff',
   },
   {
     slug: 'swaply',
     semester: 4,
     semesterLabel: '4º Semestre',
+    period: '2025/2',
     title: 'Swaply',
-    tagline: 'Plataforma de troca de livros entre leitores',
-    description:
-      'Aplicação web para troca de livros usados entre leitores, seguindo a mesma lógica do Center Pet, mas voltada para livros: catálogo, cadastro de itens, propostas de troca e conexão entre os usuários. Projeto full stack desenvolvido em equipe e publicado na Vercel.',
-    highlights: [
-      'Catálogo de livros com cadastro e edição pelos próprios usuários',
-      'Fluxo de propostas de troca com aceite e recusa',
-      'Autenticação e áreas de perfil dos usuários',
-      'Front-end em React consumindo uma API REST própria',
-      'Deploy contínuo na Vercel',
-    ],
-    stack: ['React', 'JavaScript', 'Node.js', 'API REST', 'Vercel'],
-    role: 'Desenvolvimento full stack, em equipe',
+    tagline: 'Plataforma de troca de conhecimento com cursos e aulas',
     type: 'Full Stack',
     team: 'Projeto em equipe',
-    links: [{ label: 'Site ao vivo', href: 'https://swaply-web.vercel.app/' }],
+    description: [
+      'O Swaply é uma plataforma em que as pessoas ensinam e aprendem umas com as outras. A ideia central é "ensinar é aprender duas vezes": cada hora de aula ministrada rende 1 crédito, que pode ser usado para fazer outros cursos.',
+      'Instrutores criam cursos e abrem horários na agenda; estudantes se matriculam em um curso completo ou em aulas avulsas, agendam, assistem e avaliam. O front-end é uma aplicação React publicada na Vercel, que consome uma API REST própria.',
+    ],
+    features: [
+      'Catálogo de cursos com busca, destaques e os mais populares',
+      'Criação de cursos e gestão de disponibilidade de horários pelo instrutor',
+      'Matrícula em curso completo ou em aula avulsa, com sistema de créditos',
+      'Agenda e calendário de aulas agendadas',
+      'Favoritos, notificações, avaliações de cursos e da plataforma',
+      'Acessibilidade: VLibras e modos para daltonismo',
+    ],
+    stack: ['React', 'Vite', 'JavaScript', 'API REST', 'Vercel', 'Render'],
+    links: [{ label: 'Site publicado', href: 'https://swaply-web.vercel.app/', kind: 'site' }],
+    screenshots: [
+      { src: '/projects/swaply/01-catalogo.png', caption: 'Catálogo de cursos (página inicial)' },
+      { src: '/projects/swaply/02-login.png', caption: 'Tela de login' },
+      { src: '/projects/swaply/03-cadastro.png', caption: 'Tela de cadastro' },
+    ],
+    participation: [
+      'Atuei como desenvolvedor full stack, em equipe, do front-end e da API.',
+    ],
+    myTech: ['React', 'JavaScript', 'API REST', 'Git e GitHub'],
     accent: '#34d399',
   },
   {
     slug: 'center-pet-mobile',
     semester: 5,
     semesterLabel: '5º Semestre',
+    period: '2026/1',
     title: 'Center Pet — Mobile',
-    tagline: 'App mobile de adoção em React Native',
-    description:
-      'Evolução do Center Pet para dispositivos móveis: migração da plataforma web para um aplicativo React Native com Expo, levando a experiência de adoção para iOS e Android com transição gradual de telas.',
-    highlights: [
-      'App multiplataforma (iOS e Android) com Expo',
-      'Contexto de autenticação e persistência local de dados',
-      'Camada de serviços HTTP consumindo a API do Center Pet',
-      'Estrutura organizada em navegação, telas, serviços e contextos',
-      'Migração incremental a partir do código web legado',
-    ],
-    stack: ['React Native', 'Expo', 'JavaScript', 'Tailwind CSS', 'API REST'],
-    role: 'Desenvolvimento mobile, em equipe',
+    tagline: 'Aplicativo de adoção de animais para iOS e Android',
     type: 'Mobile',
-    team: 'Projeto em equipe (organização Center-Pet)',
-    links: [{ label: 'Repositório', href: 'https://github.com/Center-Pet/center-pet-mobile' }],
+    team: 'Projeto em equipe',
+    description: [
+      'Evolução do Center Pet para dispositivos móveis: a plataforma web foi migrada para um aplicativo React Native com Expo, levando a experiência de adoção para iOS e Android.',
+      'A migração foi feita de forma gradual, reaproveitando o código web como referência enquanto as telas eram reescritas para mobile e consumindo a mesma API do projeto.',
+    ],
+    features: [
+      'Aplicativo multiplataforma (iOS e Android) com Expo',
+      'Navegação por pilha com React Navigation',
+      'Contexto de autenticação e persistência local com AsyncStorage',
+      'Camada de serviços HTTP consumindo a API do Center Pet',
+      'Seleção de imagens da galeria, compartilhamento e exportação de arquivos',
+      'Estilização com NativeWind (Tailwind para React Native)',
+    ],
+    stack: ['React Native', 'Expo', 'React Navigation', 'NativeWind', 'AsyncStorage', 'API REST'],
+    links: [{ label: 'Código no GitHub', href: 'https://github.com/Center-Pet/center-pet-mobile', kind: 'code' }],
+    screenshots: [],
+    participation: [
+      'Integrei a equipe que migrou o Center Pet para o aplicativo mobile.',
+    ],
+    myTech: ['React Native', 'Expo', 'JavaScript', 'Git e GitHub'],
     accent: '#ec4899',
   },
 ]
+
+export const getProject = (slug?: string) => projects.find((p) => p.slug === slug)

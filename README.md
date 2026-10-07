@@ -1,112 +1,105 @@
-# Portfólio Pessoal — Luís Gustavo
+# Portfólio — Luís Gustavo Gomes Gonçalves
 
-Site de portfólio desenvolvido como atividade do último semestre do curso de
-**Desenvolvimento de Software Multiplataforma (DSM)**.
-
-O site reúne, em uma única página, os projetos que desenvolvi ao longo da
-graduação — um por semestre — com descrição, tecnologias utilizadas, meu papel
-em cada um e os links para o repositório ou para a versão publicada.
-
-## 🔗 Acesso rápido
+Portfólio individual desenvolvido para a disciplina de **Laboratório de Desenvolvimento
+Multiplataforma** (FATEC Zona Leste · Tecnólogo em Desenvolvimento de Software
+Multiplataforma), reunindo os projetos dos **5 primeiros semestres** do curso.
 
 | | |
 | --- | --- |
-| **Site publicado (Vercel)** | https://portfolio-tau-nine-zvpd1nb7em.vercel.app |
-| **Repositório (GitHub)** | https://github.com/lugustavos/portfolio |
+| 🌐 **Site publicado** | https://portfolio-tau-nine-zvpd1nb7em.vercel.app |
+| 💻 **Código-fonte** | https://github.com/lugustavos/portfolio |
+| 🐙 **GitHub do aluno** | https://github.com/lugustavos |
 
-> Para avaliar, basta abrir o link do site publicado — não é necessário instalar
-> nada. As instruções abaixo servem apenas para quem quiser rodar o projeto
-> localmente.
+> Para avaliar, basta abrir o **site publicado** — não é preciso instalar nada.
+> As instruções de execução local estão mais abaixo.
 
-## 📄 O que o site apresenta
+## ✅ Onde encontrar cada requisito
 
-- **Apresentação** — nome, área de atuação e um resumo pessoal.
-- **Projetos por semestre** — cada cartão abre uma janela com os detalhes:
+### Página mestra (`/`)
 
-  | Semestre | Projeto | Descrição |
-  | --- | --- | --- |
-  | 1º | MindRest | Plataforma web sobre gestão de ansiedade |
-  | 2º | 2Buku.com | Marketplace de troca de livros usados |
-  | 3º | Center Pet — Web | Plataforma de adoção responsável de animais |
-  | 4º | Swaply | Plataforma full stack de troca de livros |
-  | 5º | Center Pet — Mobile | Aplicativo de adoção em React Native |
+| # | Requisito | Onde está no site |
+| --- | --- | --- |
+| 1 | Identidade visual própria | Marca pessoal "LG" (gradiente violeta → ciano), paleta escura e tipografia Inter + JetBrains Mono, aplicadas em todo o site |
+| 2 | Foto do aluno | Topo da página |
+| 3 | Nome completo | Topo da página |
+| 4 | Link para o GitHub | Topo da página, menu e rodapé |
+| 5 | Dados do curso | Seção **Curso em andamento** — faculdade, curso, semestre de início e previsão de conclusão |
+| 6 | Trabalhos realizados | Seção **Experiência profissional** — empresa, datas, cargos e descrição das atividades |
+| 7 | Cursos de extensão | Seção **Cursos de extensão e certificações** |
+| 8 | Línguas e nível | Seção **Idiomas** |
+| 9a | Card de cada projeto | Seção **Projetos por semestre** — um card por projeto, que abre a tela do projeto |
+| 10 | Hospedagem | Vercel (link acima) |
 
-- **Trajetória** — linha do tempo com a evolução ao longo dos semestres.
-- **Sobre** — formação e um pouco mais de contexto.
-- **Skills** — tecnologias organizadas por área.
-- **Contato** — e-mail, GitHub e LinkedIn.
+### Tela de cada projeto (`/projetos/<nome>`)
 
-## 🛠️ Tecnologias utilizadas
+| # | Requisito | Seção da tela |
+| --- | --- | --- |
+| i | Nome do projeto | Título da página |
+| ii | Descrição e tecnologias | **Sobre o projeto** |
+| iii | Link para o código | **Código e acesso** |
+| iv | Screenshots em funcionamento | **Screenshots** (clique para ampliar) |
+| v | Minha participação e tecnologias que usei | **Minha participação** |
 
-- **React 18** + **TypeScript**
-- **Vite** (bundler e servidor de desenvolvimento)
-- **Tailwind CSS** (estilização)
-- **Framer Motion** (animações)
-- **Vercel** (hospedagem)
+## 📚 Projetos apresentados
+
+| Semestre | Projeto | Tela |
+| --- | --- | --- |
+| 1º (2024/1) | MindRest — plataforma web sobre ansiedade | `/projetos/mindrest` |
+| 2º (2024/2) | 2Buku.com — troca de livros usados | `/projetos/2buku` |
+| 3º (2025/1) | Center Pet Web — adoção responsável de animais | `/projetos/center-pet-web` |
+| 4º (2025/2) | Swaply — troca de conhecimento com cursos e aulas | `/projetos/swaply` |
+| 5º (2026/1) | Center Pet Mobile — app de adoção em React Native | `/projetos/center-pet-mobile` |
+
+## 🛠️ Tecnologias do portfólio
+
+React 18 · TypeScript · Vite · Tailwind CSS · Framer Motion · React Router · Vercel
 
 ## 💻 Como baixar e rodar localmente
 
-### Pré-requisito
+**Pré-requisito:** [Node.js](https://nodejs.org) 18 ou superior (`node -v` para conferir).
 
-- **Node.js 18 ou superior** — https://nodejs.org (verifique com `node -v`)
+**1. Baixar o projeto** — escolha uma das opções:
 
-### Opção 1 — Baixar o ZIP (sem Git)
+- **ZIP (sem Git):** em https://github.com/lugustavos/portfolio clique em **Code → Download ZIP**,
+  extraia a pasta e abra um terminal dentro dela.
+- **Git:**
+  ```bash
+  git clone https://github.com/lugustavos/portfolio.git
+  cd portfolio
+  ```
 
-1. Acesse https://github.com/lugustavos/portfolio
-2. Clique no botão verde **`Code`** → **`Download ZIP`**
-3. Extraia a pasta e abra um terminal dentro dela
-
-### Opção 2 — Clonar com Git
-
-```bash
-git clone https://github.com/lugustavos/portfolio.git
-cd portfolio
-```
-
-### Instalar as dependências e iniciar
+**2. Instalar e iniciar**
 
 ```bash
 npm install
 npm run dev
 ```
 
-O terminal vai mostrar um endereço (normalmente `http://localhost:5173`).
-Abra esse endereço no navegador.
+Abra o endereço mostrado no terminal (normalmente `http://localhost:5173`).
 
-### Gerar a versão de produção (opcional)
+**3. Gerar a versão de produção (opcional)**
 
 ```bash
-npm run build     # gera a pasta /dist com os arquivos finais
-npm run preview   # abre a versão de produção localmente
+npm run build     # gera a pasta /dist
+npm run preview   # serve o build localmente
 ```
 
-## 📁 Estrutura do projeto
+## 📁 Estrutura
 
 ```
-portfolio/
-├── index.html
-├── package.json
-├── vite.config.ts
-├── tailwind.config.js
-├── public/
-│   ├── favicon.svg
-│   └── perfil.jpg              # foto usada na seção "Sobre"
-└── src/
-    ├── main.tsx                # ponto de entrada
-    ├── App.tsx                 # monta as seções da página
-    ├── index.css               # tema (cores e fontes)
-    ├── data/
-    │   ├── profile.ts          # dados pessoais, formação, links e skills
-    │   └── projects.ts         # informações de cada projeto
-    └── components/             # seções: Hero, Projects, Timeline, About, Skills, Contact
-        └── ui/Reveal.tsx       # animação de entrada ao rolar a página
+src/
+├── data/
+│   ├── profile.ts        # dados pessoais, curso, experiência, cursos, idiomas
+│   └── projects.ts       # dados de cada projeto (descrição, links, screenshots, participação)
+├── pages/
+│   ├── Home.tsx          # página mestra
+│   └── ProjectPage.tsx   # tela de apresentação de cada projeto
+├── components/           # seções da página mestra e elementos de interface
+└── index.css             # tema (cores e fontes)
+public/
+├── perfil.jpg            # foto
+├── certs/                # selos das certificações
+└── projects/<projeto>/   # screenshots de cada projeto
 ```
 
-Todo o conteúdo textual do site (dados pessoais e projetos) fica centralizado em
-`src/data/` — os componentes apenas exibem essas informações.
-
-## 👤 Autor
-
-**Luís Gustavo**
-DSM — Desenvolvimento de Software Multiplataforma
-GitHub: [@lugustavos](https://github.com/lugustavos) · LinkedIn: [lugustavos](https://www.linkedin.com/in/lugustavos/)
+Todo o conteúdo do site fica centralizado em `src/data/`.

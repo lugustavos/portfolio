@@ -1,101 +1,123 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, Mail, MapPin } from 'lucide-react'
 import { profile } from '../data/profile'
-import { projects } from '../data/projects'
 
 export function Hero() {
+  const [imgOk, setImgOk] = useState(true)
+  const initials = profile.firstName
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+
   return (
-    <section id="top" className="relative flex min-h-screen items-center overflow-hidden pt-16">
+    <section id="top" className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
       <div className="pointer-events-none absolute left-1/2 top-24 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-accent/20 blur-[120px]" />
 
-      <div className="container-content">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="eyebrow mb-5"
-        >
-          {profile.location}
-        </motion.p>
+      <div className="container-content grid items-center gap-12 md:grid-cols-[1.4fr_1fr]">
+        <div>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="eyebrow mb-5 inline-flex items-center gap-2"
+          >
+            <MapPin size={14} />
+            {profile.location}
+          </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.05 }}
-          className="max-w-4xl text-4xl leading-[1.05] sm:text-6xl md:text-7xl"
-        >
-          {profile.name}
-          <span className="mt-3 block bg-gradient-to-r from-accent-soft via-accent to-accent2 bg-clip-text text-2xl font-semibold text-transparent sm:text-3xl md:text-4xl">
-            {profile.role}
-          </span>
-        </motion.h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="text-4xl leading-[1.08] sm:text-5xl lg:text-6xl"
+          >
+            {profile.fullName}
+            <span className="mt-3 block bg-gradient-to-r from-accent-soft via-accent to-accent2 bg-clip-text text-2xl font-semibold text-transparent sm:text-3xl">
+              {profile.role}
+            </span>
+          </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15 }}
-          className="mt-8 max-w-2xl text-lg leading-relaxed text-muted"
-        >
-          {profile.bio}
-        </motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="mt-6 max-w-2xl leading-relaxed text-muted"
+          >
+            {profile.bio}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-9 flex flex-wrap items-center gap-3"
+          >
+            <a
+              href={profile.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 font-medium text-white transition-colors hover:bg-accent-soft"
+            >
+              <Github size={18} />
+              GitHub · @lugustavos
+            </a>
+            <a
+              href={profile.links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-border px-5 py-3 font-medium transition-colors hover:border-accent hover:text-accent-soft"
+            >
+              <Linkedin size={18} />
+              LinkedIn
+            </a>
+            <a
+              href={`mailto:${profile.links.email}`}
+              aria-label="Enviar e-mail"
+              className="rounded-xl border border-border p-3 text-muted transition-colors hover:border-accent hover:text-accent-soft"
+            >
+              <Mail size={18} />
+            </a>
+            <a
+              href="#projetos"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('projetos')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="group ml-1 inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-text"
+            >
+              Ver projetos
+              <ArrowDown size={16} className="transition-transform group-hover:translate-y-0.5" />
+            </a>
+          </motion.div>
+        </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mx-auto w-full max-w-[300px] md:max-w-none"
         >
-          <a
-            href="#projetos"
-            className="group inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 font-medium text-white transition-all hover:bg-accent-soft"
-          >
-            Ver projetos
-            <ArrowDown size={18} className="transition-transform group-hover:translate-y-0.5" />
-          </a>
-          <a
-            href="#contato"
-            className="inline-flex items-center gap-2 rounded-xl border border-border px-6 py-3 font-medium transition-colors hover:border-accent hover:text-accent-soft"
-          >
-            Entrar em contato
-          </a>
-
-          <div className="ml-1 flex items-center gap-1">
-            {[
-              { icon: Github, href: profile.links.github, label: 'GitHub' },
-              { icon: Linkedin, href: profile.links.linkedin, label: 'LinkedIn' },
-              { icon: Mail, href: `mailto:${profile.links.email}`, label: 'E-mail' },
-            ].map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target={href.startsWith('http') ? '_blank' : undefined}
-                rel="noreferrer"
-                aria-label={label}
-                className="rounded-lg p-2.5 text-muted transition-colors hover:bg-card hover:text-text"
-              >
-                <Icon size={20} />
-              </a>
-            ))}
+          <div className="relative">
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-accent/40 to-accent2/30 blur-2xl" />
+            <div className="card relative aspect-square overflow-hidden rounded-[1.75rem] border-border/80">
+              {imgOk ? (
+                <img
+                  src={profile.photo}
+                  alt={`Foto de ${profile.fullName}`}
+                  onError={() => setImgOk(false)}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center">
+                  <span className="bg-gradient-to-br from-accent-soft to-accent2 bg-clip-text font-mono text-7xl font-bold text-transparent">
+                    {initials}
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
         </motion.div>
-
-        <motion.dl
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 flex flex-wrap gap-x-12 gap-y-6 border-t border-border pt-8"
-        >
-          {[
-            { k: `${projects.length}`, v: 'projetos ao longo da graduação' },
-            { k: '5', v: 'semestres de desenvolvimento contínuo' },
-            { k: 'Web + Mobile', v: 'do front-end ao deploy' },
-          ].map((s) => (
-            <div key={s.v}>
-              <dt className="text-2xl font-bold text-text">{s.k}</dt>
-              <dd className="mt-1 max-w-[16ch] text-sm text-muted">{s.v}</dd>
-            </div>
-          ))}
-        </motion.dl>
       </div>
     </section>
   )

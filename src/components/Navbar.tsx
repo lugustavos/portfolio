@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { profile } from '../data/profile'
+import { Logo } from './ui/Logo'
 
 const nav = [
-  { href: '#projetos', label: 'Projetos' },
-  { href: '#trajetoria', label: 'Trajetória' },
-  { href: '#sobre', label: 'Sobre' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#contato', label: 'Contato' },
+  { hash: '#curso', label: 'Curso' },
+  { hash: '#experiencia', label: 'Experiência' },
+  { hash: '#cursos', label: 'Cursos' },
+  { hash: '#idiomas', label: 'Idiomas' },
+  { hash: '#projetos', label: 'Projetos' },
 ]
 
 export function Navbar() {
@@ -24,20 +26,24 @@ export function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'border-b border-border bg-bg/80 backdrop-blur-md' : 'border-b border-transparent'
+        scrolled || open ? 'border-b border-border bg-bg/85 backdrop-blur-md' : 'border-b border-transparent'
       }`}
     >
       <nav className="container-content flex h-16 items-center justify-between">
-        <a href="#top" className="font-mono text-sm font-semibold tracking-tight">
-          <span className="text-accent-soft">{'{'}</span> LG <span className="text-accent-soft">{'}'}</span>
-        </a>
+        <Link to={{ pathname: '/', hash: '#top' }} className="flex items-center gap-2.5" aria-label="Início">
+          <Logo size={32} />
+          <span className="hidden text-sm font-semibold tracking-tight sm:inline">{profile.firstName}</span>
+        </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-7 lg:flex">
           {nav.map((item) => (
-            <li key={item.href}>
-              <a href={item.href} className="link-underline text-sm text-muted transition-colors hover:text-text">
+            <li key={item.hash}>
+              <Link
+                to={{ pathname: '/', hash: item.hash }}
+                className="link-underline text-sm text-muted transition-colors hover:text-text"
+              >
                 {item.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -46,34 +52,40 @@ export function Navbar() {
           href={profile.links.github}
           target="_blank"
           rel="noreferrer"
-          className="hidden rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent-soft md:inline-block"
+          className="hidden rounded-lg border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent-soft lg:inline-block"
         >
           GitHub
         </a>
 
-        <button
-          className="text-muted md:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Abrir menu"
-        >
+        <button className="text-muted lg:hidden" onClick={() => setOpen((v) => !v)} aria-label="Abrir menu">
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-bg/95 backdrop-blur-md md:hidden">
-          <ul className="container-content flex flex-col py-4">
+        <div className="border-t border-border lg:hidden">
+          <ul className="container-content flex flex-col py-3">
             {nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
+              <li key={item.hash}>
+                <Link
+                  to={{ pathname: '/', hash: item.hash }}
                   onClick={() => setOpen(false)}
                   className="block py-3 text-muted transition-colors hover:text-text"
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
+            <li>
+              <a
+                href={profile.links.github}
+                target="_blank"
+                rel="noreferrer"
+                className="block py-3 text-muted transition-colors hover:text-text"
+              >
+                GitHub
+              </a>
+            </li>
           </ul>
         </div>
       )}
