@@ -238,6 +238,45 @@ export const projects: Project[] = [
     myTech: ['React', 'JavaScript', 'Node.js', 'API REST', 'Autenticação de usuários', 'Git e GitHub'],
     accent: '#d1fae5',
   },
+  {
+    slug: 'center-pet-mobile',
+    semester: 5,
+    semesterLabel: '5º Semestre',
+    period: '2026/1',
+    title: 'Center Pet (Mobile)',
+    tagline: 'Aplicativo de adoção de animais para iOS e Android',
+    type: 'Mobile',
+    team: 'Projeto em equipe',
+    description: [
+      'Evolução do Center Pet para dispositivos móveis: a plataforma web foi migrada para um aplicativo React Native com Expo, levando a experiência de adoção para iOS e Android.',
+      'A migração foi feita de forma gradual, reaproveitando o código web como referência enquanto as telas eram reescritas para mobile e consumindo a mesma API do projeto.',
+    ],
+    features: [
+      'Aplicativo multiplataforma (iOS e Android) com Expo',
+      'Navegação por pilha com React Navigation',
+      'Contexto de autenticação e persistência local com AsyncStorage',
+      'Camada de serviços HTTP consumindo a API do Center Pet',
+      'Seleção de imagens da galeria, compartilhamento e exportação de arquivos',
+      'Estilização com NativeWind (Tailwind para React Native)',
+    ],
+    stack: ['React Native', 'Expo', 'React Navigation', 'NativeWind', 'AsyncStorage', 'API REST'],
+    links: [{ label: 'Código no GitHub', href: 'https://github.com/Center-Pet/center-pet-mobile', kind: 'code' }],
+    screenshots: [
+      { src: '/projects/center-pet-mobile/01-home.png', caption: 'Início' },
+      { src: '/projects/center-pet-mobile/02-catalogo.png', caption: 'Catálogo de pets' },
+      { src: '/projects/center-pet-mobile/03-pet.png', caption: 'Detalhes do pet' },
+      { src: '/projects/center-pet-mobile/04-login.png', caption: 'Login' },
+    ],
+    screenshotsNote:
+      'Capturas do aplicativo em execução via Expo Web, em tela de celular (390×844), consumindo a API publicada.',
+    participation: [
+      'Integrei a equipe que migrou o Center Pet para o aplicativo mobile, atuando nas ferramentas de login e de autenticação.',
+      'Trabalhei no front-end do aplicativo, em React Native.',
+      'Minhas contribuições foram incorporadas ao repositório pela equipe, por isso meu nome não aparece no histórico de commits.',
+    ],
+    myTech: ['React Native', 'Expo', 'JavaScript', 'Autenticação de usuários', 'Git e GitHub'],
+    accent: '#ede9fe',
+  },
 ]
 
 export const getProject = (slug?: string) => projects.find((p) => p.slug === slug)
