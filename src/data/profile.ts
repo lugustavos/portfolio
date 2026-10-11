@@ -75,3 +75,91 @@ export const jobs: Job[] = [
     ],
   },
 ]
+
+export type ExtensionCourse = {
+  name: string
+  institution: string
+  place?: string
+  hours?: number
+  period: string
+}
+
+/** Cursos de extensão (requisito 7). */
+export const extensionCourses: ExtensionCourse[] = [
+  {
+    name: 'Fundamentos de RF e Wi-Fi',
+    institution: 'NIC.br',
+    place: 'Presencial',
+    hours: 18,
+    period: 'fev/2026',
+  },
+  {
+    name: 'Junos IJOS e Intermediate Routing (JIR)',
+    institution: 'Juniper Networks',
+    place: 'Online',
+    hours: 32,
+    period: 'nov/2025',
+  },
+  {
+    name: 'Segurança da Informação e LGPD',
+    institution: 'Fundação Bradesco',
+    place: 'Online',
+    hours: 12,
+    period: '2024',
+  },
+]
+
+export type Certification = {
+  code: string
+  name: string
+  issuer: string
+  date: string
+  image?: string
+  inProgress?: boolean
+}
+
+export const certifications: Certification[] = [
+  {
+    code: 'SC-900',
+    name: 'Security, Compliance, and Identity Fundamentals',
+    issuer: 'Microsoft',
+    date: 'ago/2026',
+    image: '/certs/sc-900.png',
+  },
+  {
+    code: 'AZ-900',
+    name: 'Azure Fundamentals',
+    issuer: 'Microsoft',
+    date: 'abr/2026',
+    image: '/certs/az-900.png',
+  },
+  {
+    code: 'GCP',
+    name: 'Google Cloud Computing Foundations',
+    issuer: 'Google Cloud Skills Boost',
+    date: 'mai/2026',
+    image: '/certs/gcp.png',
+  },
+  {
+    code: 'NSE 3',
+    name: 'Fortinet Certified Associate, FortiGate 7.6 Operator',
+    issuer: 'Fortinet',
+    date: 'abr/2026',
+    image: '/certs/nse3.png',
+  },
+  {
+    code: 'UWS',
+    name: 'UniFi Wireless Specialist',
+    issuer: 'Ubiquiti',
+    date: 'fev/2026',
+    image: '/certs/uws.png',
+  },
+  {
+    code: 'AZ-104',
+    name: 'Azure Administrator Associate',
+    issuer: 'Microsoft',
+    date: 'em andamento',
+    image: '/certs/az-104.png',
+    inProgress: true,
+  },
+]
