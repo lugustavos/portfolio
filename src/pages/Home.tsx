@@ -3,6 +3,7 @@ import { ProjectCards } from '../components/ProjectCards'
 import { Education } from '../components/Education'
 import { Experience } from '../components/Experience'
 import { Courses } from '../components/Courses'
+import { Languages } from '../components/Languages'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Education />
       <Experience />
       <Courses />
+      <Languages />
     </main>
   )
 }

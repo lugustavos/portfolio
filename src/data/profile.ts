@@ -163,3 +163,11 @@ export const certifications: Certification[] = [
     inProgress: true,
   },
 ]
+
+export type Language = { name: string; level: string; detail: string; percent: number }
+
+/** Línguas e nível (requisito 8). */
+export const languages: Language[] = [
+  { name: 'Português', level: 'Nativo', detail: 'Língua materna', percent: 100 },
+  { name: 'Inglês', level: 'Intermediário (B1)', detail: 'Leitura de documentação técnica', percent: 55 },
+]
