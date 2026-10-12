@@ -171,3 +171,22 @@ export const languages: Language[] = [
   { name: 'Português', level: 'Nativo', detail: 'Língua materna', percent: 100 },
   { name: 'Inglês', level: 'Intermediário (B1)', detail: 'Leitura de documentação técnica', percent: 55 },
 ]
+
+export const skills: { group: string; items: string[] }[] = [
+  {
+    group: 'Desenvolvimento',
+    items: ['React', 'React Native', 'JavaScript', 'Python', 'Node.js', 'HTML5 e CSS3', 'Tailwind CSS'],
+  },
+  {
+    group: 'Dados e APIs',
+    items: ['MySQL', 'MongoDB', 'APIs REST', 'Integração de APIs'],
+  },
+  {
+    group: 'Cloud e Infra',
+    items: ['Microsoft Azure', 'Entra ID', 'Google Cloud', 'Docker', 'Nginx', 'Linux'],
+  },
+  {
+    group: 'Redes e Segurança',
+    items: ['TCP/IP e VLANs', 'FortiGate', 'Firewall', 'Zero Trust', 'LGPD'],
+  },
+]
