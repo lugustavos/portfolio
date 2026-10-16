@@ -47,3 +47,7 @@ Pra gerar a versão final: `npm run build`.
 React, TypeScript, Vite, Tailwind CSS, React Router e React Icons. Hospedado na Vercel.
 
 Os textos e dados do site ficam em `src/data/` (`profile.ts` e `projects.ts`). As imagens ficam em `public/`.
+
+## Sobre o histórico de commits
+
+O site foi desenvolvido ao longo de setembro e outubro de 2026, mas só foi commitado depois, de uma vez. Com a autorização do professor, o histórico foi reorganizado em partes (uma para cada parte do site) e as datas foram distribuídas entre 5 de setembro e 16 de outubro de 2026, o período em que o trabalho foi feito.
